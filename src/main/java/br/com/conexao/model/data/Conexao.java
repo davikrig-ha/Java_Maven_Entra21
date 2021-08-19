@@ -9,37 +9,34 @@ import java.util.logging.Logger;
 public class Conexao {
 
     private Connection connection = null;
-
-    //driver de conexão do banco de dados
+    // Driver de conexao com o banco (arquivo do maven)
     private String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    //caminho do banco dentro da maquina ou do servidor
-
+    // caminho do banco dentro da maquina ou do servidor
     private static final String DATABASE_URL =
-            "jdbc:mysql://localhost:3306/zoo?useTimezone=true&serverTimezone=UTC";
+            "jdbc:mysql://127.0.0.1:3306/zoo?useTimezone=true&serverTimezone=UTC";
 
-    //USUARIO DO BANCO
+    //usuario do banco
     private static final String USERNAME = "root";
 
-    //SENHA DO BANCO
+    // senha do banco
     private static final String PASSWORD = "";
 
-    public Conexao() throws SQLException, ClassNotFoundException {
-
+    public Conexao() throws ClassNotFoundException, SQLException {
         Class.forName(DRIVER);
         this.connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
         this.connection.setAutoCommit(false);
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         return this.connection;
     }
 
-    public void close(){
-        if (this.connection != null){
-            try{
+    public void close() {
+        if (this.connection != null) {
+            try {
                 this.connection.close();
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, e);
             }
         }
@@ -56,7 +53,7 @@ public class Conexao {
                 this.connection.rollback();
             } catch (SQLException e) {
                 Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, e);
-            }finally {
+            } finally {
                 this.close();
             }
         }

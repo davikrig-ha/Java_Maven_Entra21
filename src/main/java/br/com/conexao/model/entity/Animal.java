@@ -1,18 +1,19 @@
 package br.com.conexao.model.entity;
 
-import java.sql.SQLException;
-
+// Classe do padrao de projeto JAVABEAN
 public class Animal {
 
-    //propriedades
+    // propriedades ou atributos
     private String nome;
     private String especie;
-    private int idade;
-    private String sexo;
+    protected int idade;
+    protected String sexo;
 
+    //CONSTRUTOR DEFAULT
     public Animal() {
     }
 
+    //CONSTRUTOR CUSTOMIZADO QUE INICIALIZA OS ATRIBUTOS
     public Animal(String nome, String especie, int idade, String sexo) {
         this.nome = nome;
         this.especie = especie;
@@ -20,6 +21,7 @@ public class Animal {
         this.sexo = sexo;
     }
 
+    // METODOS ACESSORES
     public String getNome() {
         return nome;
     }
@@ -51,7 +53,19 @@ public class Animal {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-
-    public void save(Animal animal) throws SQLException {
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
