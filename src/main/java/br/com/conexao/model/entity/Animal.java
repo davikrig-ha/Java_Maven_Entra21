@@ -53,6 +53,16 @@ public class Animal {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nome='" + nome + '\'' +
+                ", especie='" + especie + '\'' +
+                ", idade=" + idade +
+                ", sexo='" + sexo + '\'' +
+                '}';
+    }
 }
 
 

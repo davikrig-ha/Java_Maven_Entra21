@@ -14,7 +14,7 @@ public class Conexao {
 
     // caminho do banco dentro da maquina ou do servidor
     private static final String DATABASE_URL =
-            "jdbc:mysql://127.0.0.1:3306/zoo?useTimezone=true&serverTimezone=UTC";
+            "jdbc:mysql://127.0.0.1:3306/exercicio?useTimezone=true&serverTimezone=UTC";
 
     //usuario do banco
     private static final String USERNAME = "root";
