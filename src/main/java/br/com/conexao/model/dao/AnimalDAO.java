@@ -34,7 +34,7 @@ public class AnimalDAO {
         }
     }
 
-    public List<Animal> findAll() throws SQLException {
+  /*  public List<Animal> findAll() throws SQLException {
         String statement = "select id, nome, especie, idade, sexo from animal;";
 
         try (PreparedStatement pstmt = this.conexao.getConnection().prepareStatement(statement)) {
@@ -54,7 +54,7 @@ public class AnimalDAO {
             throw e;
         }
 
-    }
+    }*/
 
     public void update(String nomeAlterado, int id) throws SQLException {
         String statement = "update animal set nome = ? where id = ?";
@@ -87,4 +87,4 @@ public class AnimalDAO {
             throw e;
         }
     }
-    }
+}

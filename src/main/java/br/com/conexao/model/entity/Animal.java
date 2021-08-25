@@ -1,16 +1,18 @@
 package br.com.conexao.model.entity;
 
 // Classe do padrao de projeto JAVABEAN
-public class Animal {
+public abstract class Animal implements IAnimal {
 
     // propriedades ou atributos
     private String nome;
     private String especie;
     protected int idade;
     protected String sexo;
+    protected boolean vivo;
 
     //CONSTRUTOR DEFAULT
     public Animal() {
+        this.vivo = true;
     }
 
     //CONSTRUTOR CUSTOMIZADO QUE INICIALIZA OS ATRIBUTOS
@@ -53,6 +55,8 @@ public class Animal {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+
 
     @Override
     public String toString() {
